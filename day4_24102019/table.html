@@ -1,0 +1,84 @@
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $.ajax({"url":"https://reqres.in/api/users","method":"GET"}).done(function(t) {
+            let mem = $("table");
+            for(let x=0;x<t.data.length;x++)
+            {
+                // console.log(t.data[x]);
+                mem.append('<td>'+t.data[x]+'</td>');
+            }
+        })
+    </script>
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Avatar</th>        
+        </tr>
+
+
+    </table>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>George Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js> </script>
+  <script>
+    $.ajax({
+      url: 'https://reqres.in/api/users',
+      method: "GET"
+    }).done((res) => {
+      res.data.forEach(element => {
+        let openRow = "<tr>";
+        let td1 = "<td>" + element.id + "</td>";
+        let td2 = "<td>" + element.email + "</td>";
+        let td3 = "<td>" + element.first_name + "</td>";
+        let td4 = "<td>" + element.last_name + "</td>";
+        let td5 = `<td><img src="${element.avatar}" alt="photo" class="img-thumbnail"></td>`
+        let closeRow ="</tr>"
+        $("#users").append(openRow + td1 + td2 + td3 + td4 + td5 + closeRow);
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <table style="width:100%" class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Avatar</th>
+          </tr>
+        </thead>
+        <tbody id="users">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

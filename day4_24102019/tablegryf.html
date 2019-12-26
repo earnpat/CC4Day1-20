@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>George Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js> </script>
+  <script>
+    $.ajax({
+      url: "pageProejct_members.json",
+      method: "GET"
+    }).done((res) => {
+      res.forEach(element => {
+        let openRow = "<tr>";
+        let td1 = "<td>" + element.Id + "</td>";
+        let td2 = "<td>" + element.name + "</td>";
+        let td3 = "<td>" + element.concept + "</td>";
+        let td4 = `<td><a href="${element.link}">${element.link}</a></td>`;
+        let closeRow ="</tr>";
+        $("#users").append(openRow + td1 + td2 + td3 + td4 + closeRow);
+      });
+    })
+  </script>
+</head>
+
+<a href=""></a>
+
+<body>
+  <div class="container">
+    <div>
+      <table style="width:100%" class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Concept</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="users">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

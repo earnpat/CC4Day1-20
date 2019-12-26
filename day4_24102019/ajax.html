@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script>
+$(document).ready(function(){
+ $("button").click(function(){
+   alert("username : " + $("#user").val() + "\npassword : " + $("#pass").val());
+ });
+});
+</script>
+
+<input type="text" id="user" placeholder="username">
+<input type="text" id="pass" placeholder="password">
+<button>login</button> -->
+
+<script>
+$(document).ready(function(){
+ $("button").click(function(){
+    console.log($("#user").val());
+   $.ajax({
+    url: "https://reqres.in/api/login",
+    method: "POST",
+    data: {
+        email: $("#user").val(),
+        password: $("#pass").val()
+    },
+    success: function(result) {
+        alert(result.token);
+    },
+    error: function(err) {
+        alert("err");
+    }
+});
+ });
+});
+</script>
+
+<input type="text" id="user" placeholder="username">
+<input type="text" id="pass" placeholder="password">
+<button>login</button>
