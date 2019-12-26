@@ -1,0 +1,19 @@
+.container {
+    border: 1px solid #cccccc;
+}
+
+.list {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.check {
+    border: 2px solid #cccccc;
+    display: inline;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+}

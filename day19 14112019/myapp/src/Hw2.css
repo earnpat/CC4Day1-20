@@ -1,0 +1,38 @@
+.container-hw  {
+    margin: 50px 400px;
+    background-color: #cccccc;
+    border-radius: 5px;
+}
+.header-hw {
+    padding: 10px;
+}
+
+.listgroup {
+    width: 100%;
+}
+
+.listgroupitem {
+    position: relative;
+    display: block;
+    padding: 10px;
+    margin-bottom: 0;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    margin: 5px;
+    width: 708px;
+}
+
+.formcontrol {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #cccccc;
+    background-clip: padding-box;
+    border: 1px solid #cccccc;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
